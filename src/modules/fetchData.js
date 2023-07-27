@@ -1,4 +1,4 @@
-const gameId = 'zIxacV2ear1zNxuGwtAi';
+const gameId = 'VC2ALMyl2aR6MRmwdruC';
 const scoreURL = `https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`;
 
 export const getScores = async () => {
@@ -26,8 +26,6 @@ export const postScore = async () => {
   try {
     const response = await fetch(scoreURL, requestOptions);
     const data = await response.json();
-    user.value = '';
-    score.value = '';
     return data;
   } catch (error) {
     throw new Error('Failes to post score', error);
