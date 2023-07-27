@@ -21,11 +21,13 @@ export const postScore = async () => {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ user, score }),
-  }
+  };
 
   try {
     const response = await fetch(scoreURL, requestOptions);
     const data = await response.json();
+    user.value = '';
+    score.value = '';
     return data;
   } catch (error) {
     throw new Error('Failes to post score', error);

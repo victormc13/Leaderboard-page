@@ -1,6 +1,6 @@
-import { getScores } from "./fetchData";
+import { getScores } from './fetchData.js';
 
-export const displayScores = async () => {
+const displayScores = async () => {
   const scores = await getScores();
   const scoresList = document.querySelector('.score-list');
   scoresList.innerHTML = '';
@@ -10,3 +10,5 @@ export const displayScores = async () => {
     scoresList.insertAdjacentHTML('beforeend', scoreItem);
   });
 };
+
+export default displayScores;

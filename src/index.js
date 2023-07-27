@@ -1,6 +1,6 @@
 import './style.css';
-import { displayScores } from './modules/displayScores';
-import { postScore } from './modules/fetchData';
+import displayScores from './modules/displayScores.js';
+import { postScore } from './modules/fetchData.js';
 
 const refresBtn = document.querySelector('.refresh-btn');
 refresBtn.addEventListener('click', () => {
@@ -12,8 +12,6 @@ submitBtn.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   await postScore();
-  user.value = '';
-  score.value = '';
   displayScores();
 });
 
