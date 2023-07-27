@@ -1,12 +1,12 @@
 :root {
-  --black: #000000;
-  --white: #ffffff;
-  --red: #FF0000;
-  --dark-red: #C404047F;
-  --pink: #FF237F;
-  --blue: #00A2FF;
+  --black: #000;
+  --white: #fff;
+  --red: #f00;
+  --dark-red: #c404047f;
+  --pink: #ff237f;
+  --blue: #00a2ff;
   --dark-blue: #005c91;
-  --background-input: #1400007F;
+  --background-input: #1400007f;
 }
 
 * {
@@ -93,7 +93,7 @@ body {
   background-color: var(--black);
   border-bottom: 1px solid var(--dark-blue);
 }
-  
+
 .score-list li > span {
   font-weight: 500;
   color: var(--pink);
