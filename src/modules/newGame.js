@@ -12,8 +12,8 @@ const newGame = async () => {
     const response = await fetch(baseURL, requestOptions);
     const data = await response.json();
     const gameId = data.result.split(': ')[1];
-    return gameId; // to see the ID received, you should use the console.log below
-    // console.log(gameName, 'game created with ID:', gameId);
+    /* return gameId; */ // to see the ID received, you should import/call this function in index.js file and use the console.log below
+    console.log(gameName, 'game created with ID:', gameId);
   } catch (error) {
     throw new Error('Failed to create game', error);
   }
