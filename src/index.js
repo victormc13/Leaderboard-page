@@ -12,6 +12,8 @@ submitBtn.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   await postScore();
+  document.getElementById('user').value = '';
+  document.getElementById('score').value = '';
   displayScores();
 });
 
