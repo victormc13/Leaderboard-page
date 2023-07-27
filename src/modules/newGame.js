@@ -12,7 +12,7 @@ const newGame = async () => {
     const response = await fetch(baseURL, requestOptions);
     const data = await response.json();
     const gameId = data.result.split(': ')[1];
-    return gameId; // console.log(gameName, 'game created with ID:', gameId);
+    return gameId; 
   } catch (error) {
     throw new Error('Failed to create game', error);
   }
