@@ -1,3 +1,14 @@
+:root {
+  --black: #000;
+  --white: #fff;
+  --red: #f00;
+  --dark-red: #c404047f;
+  --pink: #ff237f;
+  --blue: #00a2ff;
+  --dark-blue: #005c91;
+  --background-input: #1400007f;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,15 +23,20 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background: url(images/gamepad.webp) no-repeat center/cover;
 }
 
 .title {
   font-size: 8vh;
   font-weight: 700;
+  color: var(--white);
+  text-shadow: 5px 2px 4px var(--black);
 }
 
 .subtitle {
   font-size: 4.5vh;
+  color: var(--white);
+  text-shadow: 5px 1px 2px var(--black);
 }
 
 .flex-column {
@@ -34,30 +50,34 @@ body {
 }
 
 .container {
-  min-width: 90vw;
+  min-width: 70vw;
   display: flex;
   flex-direction: column;
   gap: 5rem;
+  background: linear-gradient(90deg, #630808, #d81616, #630808);
+  padding: 1vw;
+  border-radius: 20px;
 }
 
 .css-grid {
   display: grid;
-  align-items: center;
   justify-items: center;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
 }
 
 .scores-container {
-  width: 80%;
+  width: 90%;
   height: 60vh;
   gap: 3rem;
 }
 
 .score-list {
   height: 100%;
-  border: 2px solid black;
+  border: 4px solid var(--dark-red);
+  border-radius: 8px;
   overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .score-list::-webkit-scrollbar {
@@ -67,10 +87,16 @@ body {
 .score-list li {
   height: 15%;
   padding: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--blue);
+  background-color: var(--black);
+  border-bottom: 1px solid var(--dark-blue);
 }
 
-.score-list :nth-child(even) {
-  background-color: darkgray;
+.score-list li > span {
+  font-weight: 500;
+  color: var(--pink);
 }
 
 .addscore-container {
@@ -80,18 +106,45 @@ body {
   gap: 3rem;
 }
 
+.form {
+  gap: 3rem;
+}
+
 .addscore-container input {
   height: 10%;
-  border: 2px solid black;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 4px solid var(--dark-blue);
   padding: 1rem;
 }
 
+.addscore-container input:focus::placeholder {
+  color: var(--white);
+  font-weight: 700;
+}
+
+.addscore-container input:focus {
+  outline: none;
+  color: var(--white);
+  background-color: var(--background-input);
+}
+
 .btn {
-  width: 4.3rem;
   padding: 0.5rem;
   font-weight: 700;
-  border: 2px solid black;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  background-color: var(--white);
+  color: var(--red);
+}
+
+.btn:active {
+  color: var(--white);
+  background-color: var(--dark-blue);
+  transform: translate(4px, 2px);
 }
 
 .submit-btn {
