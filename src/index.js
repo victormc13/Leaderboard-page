@@ -7,13 +7,12 @@ refresBtn.addEventListener('click', () => {
   displayScores();
 });
 
-const submitBtn = document.querySelector('.form');
-submitBtn.addEventListener('submit', async (e) => {
+const form = document.querySelector('.form');
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   await postScore();
-  document.getElementById('user').value = '';
-  document.getElementById('score').value = '';
+  form.reset();
 });
 
 window.load = displayScores();
